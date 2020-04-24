@@ -1,0 +1,12 @@
+.DS_Store
+/.build
+/Packages
+/*.xcodeproj
+xcuserdata/
+
+# ignore internal Swift Package Mananager
+/.swiftpm
+
+# Ignore required credentials for unit testing
+TestConfig.swift
+*.p8
