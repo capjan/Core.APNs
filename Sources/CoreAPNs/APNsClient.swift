@@ -34,6 +34,8 @@ public class APNsClient {
         push(notificationQueue.removeFirst())
     }
 
+    public init() {}
+
     private func push(_ notification: APNsNotification) {
 
         let request = notification.toUrlRequest()
