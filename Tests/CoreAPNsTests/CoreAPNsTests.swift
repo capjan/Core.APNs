@@ -30,8 +30,8 @@ final class CoreAPNsTests: XCTestCase {
                                                   accessToken: accessToken,
                                                   deviceID: deviceToken,
                                                   appBundleID: appBundleID,
-                                                  priority: .immediately,
-                                                  payload: payload)
+                                                  payload: payload,
+                                                  priority: .immediately)
 
             // create a client
             let client = APNsClient()

@@ -7,8 +7,6 @@
 
 import Foundation
 
-
-
 extension APNsNotification {
 
     func toUrlRequest() -> URLRequest {
