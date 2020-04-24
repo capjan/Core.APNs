@@ -4,7 +4,7 @@ import Combine
 
 final class CoreAPNsTests: XCTestCase {
 
-    func testExample() {
+    func testSimpleAlert() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct
         // results.
@@ -30,8 +30,7 @@ final class CoreAPNsTests: XCTestCase {
                                                   accessToken: accessToken,
                                                   deviceID: deviceToken,
                                                   appBundleID: appBundleID,
-                                                  payload: payload,
-                                                  priority: .immediately)
+                                                  payload: payload)
 
             // create a client
             let client = APNsClient()
@@ -49,16 +48,12 @@ final class CoreAPNsTests: XCTestCase {
             waitForExpectations(timeout: 5) { optionalError in
                 cancelToken.cancel()
             }
-
-
-
-
         }  catch {
             XCTAssert(false, "failed to create an access Token: \(error)")            
         }
     }
 
     static var allTests = [
-        ("testExample", testExample),
+        ("testSimpleAlert", testSimpleAlert),
     ]
 }
