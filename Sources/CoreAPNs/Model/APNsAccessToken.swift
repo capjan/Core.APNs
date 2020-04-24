@@ -37,7 +37,7 @@ public struct APNsAccessToken {
     ///   - p8FilePath: filepath to the private key
     ///   - issuedAt: Time at which this token was created
     /// - Throws: APNsError.invalidP8KeyFile
-    init (keyID: String, teamID: String, p8FilePath: String, issuedAt: Date = Date()) throws {
+    public init (keyID: String, teamID: String, p8FilePath: String, issuedAt: Date = Date()) throws {
         let url = URL(fileURLWithPath: p8FilePath)
         guard let p8PrivateKey = try? Data(contentsOf: url) else {
             throw APNsError.invalidP8KeyFile(filePath: p8FilePath)
