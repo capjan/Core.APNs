@@ -26,12 +26,12 @@ final class CoreAPNsTests: XCTestCase {
             XCTAssertTrue(accessToken.value.count > 0)
 
             // create a notification
-            let myNotification = APNsPushNotification(server: .sandbox,
-                                                    accessToken: accessToken,
-                                                    deviceID: deviceToken,
-                                                    appBundleID: appBundleID,
-                                                    priority: .immediately,
-                                                    payload: payload)
+            let myNotification = APNsNotification(server: .sandbox,
+                                                  accessToken: accessToken,
+                                                  deviceID: deviceToken,
+                                                  appBundleID: appBundleID,
+                                                  priority: .immediately,
+                                                  payload: payload)
 
             // create a client
             let client = APNsClient()

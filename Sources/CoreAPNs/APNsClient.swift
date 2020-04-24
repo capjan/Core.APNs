@@ -13,13 +13,13 @@ import Combine
 public class APNsClient {
 
     private var dataTask: URLSessionDataTask?
-    private var notificationQueue = [APNsPushNotification]()
+    private var notificationQueue = [APNsNotification]()
 
     public var pushPublisher = PassthroughSubject<APNsPushResult, Never>()
 
     private(set) var isBusy: Bool = false
 
-    public func enqueue(notification: APNsPushNotification) {
+    public func enqueue(notification: APNsNotification) {
         notificationQueue.append(notification)
         progressQueue()
     }
@@ -34,7 +34,7 @@ public class APNsClient {
         push(notificationQueue.removeFirst())
     }
 
-    private func push(_ notification: APNsPushNotification) {
+    private func push(_ notification: APNsNotification) {
 
         let request = notification.toUrlRequest()
         let session = URLSession(configuration: .default)

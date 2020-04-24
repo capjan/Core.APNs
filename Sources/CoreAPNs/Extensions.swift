@@ -9,7 +9,7 @@ import Foundation
 
 
 
-extension APNsPushNotification {
+extension APNsNotification {
 
     func toUrlRequest() -> URLRequest {
         let url = server.url.appendingPathComponent("/3/device/\(deviceID)")

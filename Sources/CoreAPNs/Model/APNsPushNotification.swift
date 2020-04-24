@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct APNsPushNotification {
+public struct APNsNotification {
     public let id = UUID()
     public let server: APNsServer
     public let accessToken: APNsAccessToken
